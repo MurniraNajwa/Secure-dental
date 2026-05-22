@@ -111,18 +111,6 @@ The SQL scripts create the `SecureDental` database and these SQL Server logins:
 5. Use `Programmability > Stored Procedures` to inspect CRUD procedures such as `dbo.create_patient`, `dbo.delete_patient`, `dbo.create_appointment`, and `dbo.cancel_appointment`.
 6. Use `Security > Users` to inspect database users and permissions.
 
-## Security Evidence To Capture
-
-Take screenshots of:
-
-1. Login page and successful login.
-2. Receptionist inserting a patient and the highlighted row in the patient table.
-3. Receptionist scheduling an appointment with one of the seeded dentists.
-4. Receptionist deleting/cancelling one old entry.
-5. Another new entry inserted.
-6. Auditor viewing audit log.
-7. `npm run db:test-security` output showing SQL injection blocked and direct table access denied.
-8. SQL Server logins, users, grants, stored procedures, and views in SSMS.
 
 ## Project Structure
 
