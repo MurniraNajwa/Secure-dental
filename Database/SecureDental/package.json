@@ -1,0 +1,24 @@
+{
+  "name": "secure-dental-sql-assignment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Secure dental appointment and patient record system for CCS6344 Assignment 1.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:init": "sqlcmd -S localhost -d master -E -b -i db/00_schema.sql,db/01_security.sql,db/02_seed.sql -v AppEncryptionKey=\"change-this-demo-key\"",
+    "db:test-security": "sqlcmd -S localhost -d SecureDental -E -b -i db/03_security_tests.sql -v AppEncryptionKey=\"change-this-demo-key\"",
+    "check": "node --check src/server.js && node --check src/db.js && node --check src/security.js && node --check src/validators.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "helmet": "^7.1.0",
+    "mssql": "^12.5.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

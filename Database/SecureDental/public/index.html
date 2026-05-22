@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SecureDental</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div class="brand">
+          <span class="brandMark">SD</span>
+          <div>
+            <p class="eyebrow">Database Security Workspace</p>
+            <h1>SecureDental</h1>
+            <p id="sessionLabel">Sign in to manage dental records.</p>
+          </div>
+        </div>
+        <button id="logoutButton" class="secondary hidden" type="button">Logout</button>
+      </section>
+
+      <section id="loginPanel" class="authPanel">
+        <div class="panel loginCard">
+          <h2>Staff Login</h2>
+          <form id="loginForm">
+            <label>Email <input name="email" type="email" value="reception@securedental.local" required></label>
+            <label>Password <input name="password" type="password" value="ReceptionPass123!" required></label>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="appPanel" class="dashboard hidden">
+        <section id="accessNotice" class="accessBanner">
+          <span id="accessRole">Role</span>
+          <strong id="accessTitle">Workspace</strong>
+          <p id="accessDescription">Role-based controls are active.</p>
+        </section>
+
+        <section id="summaryPanel" class="summaryGrid" aria-label="Dashboard summary">
+          <article class="summaryCard accentTeal">
+            <i></i>
+            <span>Patients</span>
+            <strong id="patientCount">0</strong>
+          </article>
+          <article class="summaryCard accentGold">
+            <i></i>
+            <span>Appointments</span>
+            <strong id="appointmentCount">0</strong>
+          </article>
+          <article class="summaryCard accentCoral">
+            <i></i>
+            <span>Scheduled</span>
+            <strong id="activeAppointmentCount">0</strong>
+          </article>
+          <article class="summaryCard accentInk">
+            <i></i>
+            <span>Role</span>
+            <strong id="roleSummary">-</strong>
+          </article>
+        </section>
+
+        <section id="entryPanels" class="formGrid">
+        <section id="patientEntryPanel" class="panel">
+          <div class="panelHeader">
+            <div>
+              <p class="eyebrow">Registry</p>
+              <h2>New Patient</h2>
+            </div>
+          </div>
+          <form id="patientForm" novalidate>
+            <label>Full name <input name="fullName" required></label>
+            <label>Email <input name="email" type="email" required></label>
+            <label>NRIC <input name="nric" placeholder="990101-10-1234" required></label>
+            <label>Phone <input name="phone" placeholder="+60123456789" required></label>
+            <label>Address <textarea name="address" required></textarea></label>
+            <label>Treatment notes <textarea name="treatmentNotes" placeholder="Scaling, filling, extraction, braces review..." required></textarea></label>
+            <button type="submit">Add Patient</button>
+          </form>
+        </section>
+
+        <section id="appointmentEntryPanel" class="panel">
+          <div class="panelHeader">
+            <div>
+              <p class="eyebrow">Schedule</p>
+              <h2>New Appointment</h2>
+            </div>
+          </div>
+          <form id="appointmentForm" novalidate>
+            <label>Patient <select name="patientId" required></select></label>
+            <label>Dentist <select name="dentistId" required></select></label>
+            <label>Date and time <input name="scheduledAt" type="datetime-local" required></label>
+            <label>Procedure / reason <textarea name="reason" placeholder="Check-up, scaling, filling, extraction..." required></textarea></label>
+            <button type="submit">Schedule</button>
+          </form>
+        </section>
+        </section>
+
+        <section id="patientsPanel" class="panel wide">
+          <div class="sectionTitle">
+            <div>
+              <p class="eyebrow">Directory</p>
+              <h2>Patients</h2>
+            </div>
+            <button id="refreshButton" class="secondary" type="button">Refresh</button>
+          </div>
+          <div class="tableWrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Treatment Notes</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="patientsTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="appointmentsPanel" class="panel wide">
+          <div class="sectionTitle">
+            <div>
+              <p class="eyebrow">Timeline</p>
+              <h2>Appointments</h2>
+            </div>
+          </div>
+          <div class="tableWrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Patient</th>
+                  <th>Dentist</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="appointmentsTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="auditPanel" class="panel wide hidden">
+          <div class="sectionTitle">
+            <div>
+              <p class="eyebrow">Compliance</p>
+              <h2>Audit Log</h2>
+            </div>
+          </div>
+          <div class="tableWrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Actor Role</th>
+                  <th>Action</th>
+                  <th>Entity</th>
+                </tr>
+              </thead>
+              <tbody id="auditTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <p id="message" class="message" role="status"></p>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
