@@ -1,6 +1,7 @@
 -- SQL Server security setup for SecureDental.
 -- Creates logins/users, session-context helpers, stored procedures, views, triggers,
 -- and encryption controls for protected patient data.
+
 USE SecureDental;
 GO
 
