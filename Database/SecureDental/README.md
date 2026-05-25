@@ -111,6 +111,13 @@ The SQL scripts create the `SecureDental` database and these SQL Server logins:
 5. Use `Programmability > Stored Procedures` to inspect CRUD procedures such as `dbo.create_patient`, `dbo.delete_patient`, `dbo.create_appointment`, and `dbo.cancel_appointment`.
 6. Use `Security > Users` to inspect database users and permissions.
 
+## References
+
+1.	Personal Data Protection Act 2010 (Act 709), Malaysia: https://www.pdp.gov.my/ppdpv1/en/akta/pdp-act-2010-en/.
+2.	Microsoft Learn: SQL Server security, users, roles, permissions, and encryption functions.
+3.	OWASP Cheat Sheet Series: SQL Injection Prevention.
+4.	OWASP Cheat Sheet Series: Session Management.
+
 
 ## Project Structure
 
