@@ -78,7 +78,6 @@ Additional seeded dentists for appointment selection:
 | Dr Mei Ling Tan | mei.tan@securedental.local | DentistPass123! |
 | Dr Ravi Kumar | ravi.kumar@securedental.local | DentistPass123! |
 
-For the class demo, keep `APP_ENCRYPTION_KEY=change-this-demo-key` so the seeded sample patient can be decrypted. For a real deployment, replace it before inserting production data.
 
 ## Local MSSQL Configuration
 
